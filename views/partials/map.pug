@@ -2,14 +2,61 @@
     script.
         function initMap() {
             var locationSorel = {lat: 46.025070, lng: -73.122605};
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 14,
-                center: locationSorel,
-            });
-            var marker = new google.maps.Marker({
-                position: locationSorel,
-                map: map,
-                title: 'Hello World!'
-            });
+            var map = new google.maps.Map(
+                document.getElementById('map'), {
+                    zoom: 4,
+                    center: locationSorel,
+                    disableRightClickZoom: true
+                }
+            );
+            var marker = new google.maps.Marker({position: locationSorel, map: map});
+
+            map.addListener('rightclick', function (e) {
+                new google.maps.Marker({
+                    position: e.latLng,
+                    icon: icons[features[0].type].icon,
+                    map: map
+                });
+            })
+
+            var iconBase =
+                '/assets/markers/';
+
+            var icons = {
+                normal: {
+                    icon: {
+                        url: iconBase + 'waterDrop.png',
+                        scaledSize: new google.maps.Size(50, 50)
+                    },
+                },
+                warning: {
+                    icon: {
+                        url: iconBase + 'waterDropWarning.png',
+                        scaledSize: new google.maps.Size(50, 50)
+                    },
+                },
+                danger: {
+                    icon: {
+                        url: iconBase + 'waterDropDanger.png',
+                        scaledSize: new google.maps.Size(50, 50)
+                    },
+                }
+            };
+
+            var features = [
+                {
+                    position: new google.maps.LatLng(-33.91721, 151.22630),
+                    type: 'warning'
+                }
+            ];
+
+            for (var i = 0; i < features.length; i++) {
+                var marker = new google.maps.Marker({
+                    position: features[i].position,
+                    icon: icons[features[i].type].icon,
+                    map: map
+                });
+            }
+            ;
         }
     script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBL0q3lgtSop0pLjF5aMhy1Zgyp46BBPbQ&callback=initMap')
