@@ -23405,3 +23405,7 @@ a.visual-picker:focus,a.visual-picker:hover {
 .message-publisher .input-group.focus {
     box-shadow: none
 }
+
+.switcher-control-lg .switcher-indicator:before {
+    height: 1.5rem;
+}

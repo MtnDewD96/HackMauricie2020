@@ -1,0 +1,4 @@
+mixin input(type, id, label)
+    .form-group.mb-4
+        label.d-block.text-left(for=id) #{label}
+        input.form-control.form-control-lg(id=id type=type)&attributes(attributes)
