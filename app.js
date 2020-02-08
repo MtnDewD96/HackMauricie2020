@@ -3,11 +3,25 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const app = express();
+
+mongoose.connect('mongodb://localhost:27017/floodwatcher', {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connection
+    .on('connected', () => {
+      console.log('Connected MongoDB');
+    })
+    .on('error', (err) => {
+      console.log('Mongoose connection has occured error');
+      console.log(err);
+    })
+    .on('disconnected', () => {
+      console.log('Disconnected MongoDB');
+    });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
