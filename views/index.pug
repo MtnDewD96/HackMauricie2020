@@ -1,5 +1,158 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    main.auth.auth-floated
+        .auth-form
+            h1.p-5 FLOOD WATCH
+            .card-body.border-top
+                .d-flex.justify-content-between.my-3
+                    h4.card-title  Recent activity
+                    a(href='#') View all
+                // .timeline
+                ul.timeline.timeline-fluid
+                    // .timeline-item
+                    li.timeline-item
+                        // .timeline-figure
+                        .timeline-figure
+                            span.tile.tile-circle.tile-sm
+                                i.far.fa-calendar-alt.fa-lg
+                        // /.timeline-figure
+                        // .timeline-body
+                        .timeline-body
+                            // .media
+                            .media
+                                // .media-body
+                                .media-body
+                                    p.mb-0
+                                        a(href='#') Jeffrey Wells
+                                        |  created a
+                                        a(href='#') schedule
+                                    span.timeline-date About a minute ago
+                                // /.media-body
+                            // /.media
+                        // /.timeline-body
+                    // /.timeline-item
+                    // .timeline-item
+                    li.timeline-item
+                        // .timeline-figure
+                        .timeline-figure
+                            span.tile.tile-circle.tile-sm
+                                i.oi.oi-chat.fa-lg
+                        // /.timeline-figure
+                        // .timeline-body
+                        .timeline-body
+                            // .media
+                            .media
+                                // .media-body
+                                .media-body
+                                    p.mb-0
+                                        a(href='#') Anna Vargas
+                                        |  logged a
+                                        a(href='#') chat
+                                        |  with team
+                                    span.timeline-date 3 hours ago
+                                // /.media-body
+                            // /.media
+                        // /.timeline-body
+                    // /.timeline-item
+                    // .timeline-item
+                    li.timeline-item
+                        // .timeline-figure
+                        .timeline-figure
+                            span.tile.tile-circle.tile-sm
+                                i.fa.fa-tasks.fa-lg
+                        // /.timeline-figure
+                        // .timeline-body
+                        .timeline-body
+                            // .media
+                            .media
+                                // .media-body
+                                .media-body
+                                    p.mb-0
+                                        a(href='#') Arthur Carroll
+                                        |  created a
+                                        a(href='#') task
+                                    span.timeline-date 8:14pm
+                                // /.media-body
+                            // /.media
+                        // /.timeline-body
+                    // /.timeline-item
+                    // .timeline-item
+                    li.timeline-item
+                        // .timeline-figure
+                        .timeline-figure
+                            span.tile.tile-circle.tile-sm
+                                i.fas.fa-user-plus.fa-lg
+                        // /.timeline-figure
+                        // .timeline-body
+                        .timeline-body
+                            // .media
+                            .media
+                                // .media-body
+                                .media-body
+                                    p.mb-0
+                                        a(href='#') Sara Carr
+                                        |  invited to
+                                        a(href='#') Stilearn Admin
+                                        |  project
+                                    span.timeline-date 7:21pm
+                                // /.media-body
+                            // /.media
+                        // /.timeline-body
+                    // /.timeline-item
+                    // .timeline-item
+                    li.timeline-item
+                        // .timeline-figure
+                        .timeline-figure
+                            span.tile.tile-circle.tile-sm
+                                i.fa.fa-folder.fa-lg
+                        // /.timeline-figure
+                        // .timeline-body
+                        .timeline-body
+                            // .media
+                            .media
+                                // .media-body
+                                .media-body
+                                    p.mb-0
+                                        a(href='#') Angela Peterson
+                                        |  added
+                                        a(href='#') Looper Admin
+                                        |  to collection
+                                    span.timeline-date 5:21pm
+                                // /.media-body
+                            // /.media
+                        // /.timeline-body
+                    // /.timeline-item
+                    // .timeline-item
+                    li.timeline-item
+                        // .timeline-figure
+                        .timeline-figure
+                            span.tile.tile-circle.tile-sm
+                                i.oi.oi-person.fa-lg
+                        // /.timeline-figure
+                        // .timeline-body
+                        .timeline-body
+                            // .media
+                            .media
+                                // .media-body
+                                .media-body
+                                    .avatar-group.mb-2
+                                        a.user-avatar.user-avatar-sm(href='#')
+                                            img(src='assets/images/avatars/uifaces4.jpg' alt='')
+                                        a.user-avatar.user-avatar-sm(href='#')
+                                            img(src='assets/images/avatars/uifaces5.jpg' alt='')
+                                        a.user-avatar.user-avatar-sm(href='#')
+                                            img(src='assets/images/avatars/uifaces6.jpg' alt='')
+                                        a.user-avatar.user-avatar-sm(href='#')
+                                            img(src='assets/images/avatars/uifaces7.jpg' alt='')
+                                    p.mb-0
+                                        a(href='#') Willie Dixon
+                                        |  and 3 others followed you
+                                    span.timeline-date 4:32pm
+                                // /.media-body
+                            // /.media
+                        // /.timeline-body
+                    // /.timeline-item
+                // /.timeline
+
+        #announcement.auth-announcement(style='background-image: url(assets/images/illustration/img-1.png);')
