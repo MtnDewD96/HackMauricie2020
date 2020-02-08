@@ -135,9 +135,61 @@ block content
             var uluru = {lat: -25.344, lng: 131.036};
             // The map, centered at Uluru
             var map = new google.maps.Map(
-                document.getElementById('map'), {zoom: 4, center: uluru});
+                document.getElementById('map'), {
+                    zoom: 4,
+                    center: uluru,
+                    disableRightClickZoom: true}
+                );
             // The marker, positioned at Uluru
             var marker = new google.maps.Marker({position: uluru, map: map});
+
+            map.addListener('rightclick', function (e) {
+                new google.maps.Marker({
+                    position: e.latLng,
+                    icon: icons[features[0].type].icon,
+                    map: map
+                });
+            })
+
+            var iconBase =
+                '/assets/markers/';
+
+            var icons = {
+                normal: {
+                    icon : {
+                        url: iconBase + 'waterDrop.png',
+                        scaledSize: new google.maps.Size(50, 50)
+                    } ,
+                },
+                warning: {
+                    icon: {
+                        url: iconBase + 'waterDropWarning.png',
+                        scaledSize: new google.maps.Size(50, 50)
+                    },
+                },
+                danger: {
+                    icon: {
+                        url: iconBase + 'waterDropDanger.png',
+                        scaledSize: new google.maps.Size(50, 50)
+                    },
+                }
+            };
+
+            var features = [
+                {
+                    position: new google.maps.LatLng(-33.91721, 151.22630),
+                    type: 'warning'
+                }
+            ];
+
+            for (var i = 0; i < features.length; i++) {
+                var marker = new google.maps.Marker({
+                    position: features[i].position,
+                    icon: icons[features[i].type].icon,
+                    map: map
+                });
+            }
+            ;
         }
     //
       Load the API from the specified URL
