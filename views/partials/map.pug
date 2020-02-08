@@ -1,0 +1,15 @@
+#map.auth-announcement
+    script.
+        function initMap() {
+            var locationSorel = {lat: 46.025070, lng: -73.122605};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: locationSorel,
+            });
+            var marker = new google.maps.Marker({
+                position: locationSorel,
+                map: map,
+                title: 'Hello World!'
+            });
+        }
+    script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBL0q3lgtSop0pLjF5aMhy1Zgyp46BBPbQ&callback=initMap')

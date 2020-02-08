@@ -1,0 +1,26 @@
+extends layout
+include ./mixins/forms
+
+block content
+    main.auth.auth-floated
+        form.auth-form
+            .mb-4
+                h1.h3 Intervenants
+            .form-group.mb-4.d-flex
+                label.mr-2(for='inputUser') Demander au résident s'il est en situation d'urgence
+                label.switcher-control.switcher-control-success.switcher-control-lg
+                    input.switcher-input(type='checkbox')
+                    span.switcher-indicator
+                    span.switcher-label-on
+                        i.fas.fa-check
+                    span.switcher-label-off
+                        i.fas.fa-times
+            +input("text", "name", "Nom du résident")(required='' autofocus='')
+            +input("text", "address", "Adresse du résident")(required='')
+            +input("text", "markerType", "Type de marqueur")(required='')
+            +input("text", "notes", "Notes")
+            .form-group.mb-4
+                button.btn.btn-lg.btn-primary.btn-block(type='submit') Enregistrer
+        include ./partials/map
+
+
